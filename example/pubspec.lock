@@ -63,7 +63,7 @@ packages:
       name: file_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.2.0+1"
+    version: "5.2.4"
   flex_color_picker:
     dependency: transitive
     description:
