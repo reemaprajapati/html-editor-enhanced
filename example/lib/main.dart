@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced/html_editor.dart';
-import 'package:file_picker/file_picker.dart';
 
 void main() => runApp(HtmlEditorExampleApp());
 
@@ -91,13 +90,6 @@ class _HtmlEditorExampleState extends State<HtmlEditorExample> {
                   mediaLinkInsertInterceptor:
                       (String url, InsertFileType type) {
                     print(url);
-                    return true;
-                  },
-                  mediaUploadInterceptor:
-                      (PlatformFile file, InsertFileType type) async {
-                    print(file.name); //filename
-                    print(file.size); //size in bytes
-                    print(file.extension); //file extension (eg jpeg or mp4)
                     return true;
                   },
                 ),

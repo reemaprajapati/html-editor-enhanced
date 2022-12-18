@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced/html_editor.dart';
 
@@ -152,11 +151,11 @@ class HtmlToolbarOptions {
     this.initiallyExpanded = false,
     this.linkInsertInterceptor,
     this.mediaLinkInsertInterceptor,
-    this.mediaUploadInterceptor,
+    // this.mediaUploadInterceptor,
     this.onButtonPressed,
     this.onDropdownChanged,
     this.onOtherFileLinkInsert,
-    this.onOtherFileUpload,
+    // this.onOtherFileUpload,
     this.toolbarType = ToolbarType.nativeScrollable,
     this.toolbarPosition = ToolbarPosition.aboveEditor,
     this.videoExtensions,
@@ -252,17 +251,17 @@ class HtmlToolbarOptions {
   final FutureOr<bool> Function(String, InsertFileType)?
       mediaLinkInsertInterceptor;
 
-  /// Allows you to intercept any image/video/audio files being inserted into the editor.
-  /// The function passes the PlatformFile class, which contains all the file data
-  /// including name, size, type, Uint8List bytes, etc.
-  ///
-  /// Return a bool to tell the plugin if it should continue with its own handler
-  /// or if you want to handle the image/video/audio upload by yourself.
-  /// (true = continue with internal handler, false = do not use internal handler)
-  ///
-  /// If no interceptor is set, the plugin uses the internal handler.
-  final FutureOr<bool> Function(PlatformFile, InsertFileType)?
-      mediaUploadInterceptor;
+  // /// Allows you to intercept any image/video/audio files being inserted into the editor.
+  // /// The function passes the PlatformFile class, which contains all the file data
+  // /// including name, size, type, Uint8List bytes, etc.
+  // ///
+  // /// Return a bool to tell the plugin if it should continue with its own handler
+  // /// or if you want to handle the image/video/audio upload by yourself.
+  // /// (true = continue with internal handler, false = do not use internal handler)
+  // ///
+  // /// If no interceptor is set, the plugin uses the internal handler.
+  // final FutureOr<bool> Function(PlatformFile, InsertFileType)?
+  //     mediaUploadInterceptor;
 
   /// Allows you to intercept any button press. The function passes the ButtonType
   /// enum, which tells you which button was pressed, the current selected status of
@@ -302,14 +301,14 @@ class HtmlToolbarOptions {
   /// The function passes the URL of the file inserted.
   final void Function(String)? onOtherFileLinkInsert;
 
-  /// Called when a file is uploaded using the "other file" button.
-  ///
-  /// The package does not have a built in handler for these files, so if you use
-  /// the button you should provide this callback.
-  ///
-  /// The function passes the PlatformFile class, which contains all the file data
-  /// including name, size, type, Uint8List bytes, etc.
-  final void Function(PlatformFile)? onOtherFileUpload;
+  // /// Called when a file is uploaded using the "other file" button.
+  // ///
+  // /// The package does not have a built in handler for these files, so if you use
+  // /// the button you should provide this callback.
+  // ///
+  // /// The function passes the PlatformFile class, which contains all the file data
+  // /// including name, size, type, Uint8List bytes, etc.
+  // final void Function(PlatformFile)? onOtherFileUpload;
 
   /// Allows you to set the allowed extensions when a user inserts a file other
   /// than image/audio/video
